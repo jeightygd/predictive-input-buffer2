@@ -1,0 +1,33 @@
+{
+	"geode": "5.11.2",
+	"gd": { "win": "*" },
+	"id": "yourusername.predictive-input-buffer",
+	"name": "Predictive Input Buffer",
+	"version": "v0.2.0",
+	"developer": "yourusername",
+	"description": "Press F6 in a level to cycle the buffer (2, 4, 6, 8, 14 ticks, then off). When you click, the mod simulates ahead and delays the click by the fewest ticks (within the buffer) that lets you survive.",
+	"settings": {
+		"cycle-key": {
+			"type": "keybind",
+			"default": "F6",
+			"category": "gameplay",
+			"name": "Cycle buffer key",
+			"description": "Each press in a level goes: 2 ticks, 4, 6, 8, 14, off."
+		},
+		"horizon": {
+			"type": "int",
+			"default": 60,
+			"min": 10,
+			"max": 240,
+			"name": "Look-ahead (ticks)",
+			"description": "How far ahead each candidate is simulated. Higher is safer but causes a bigger hitch on every click."
+		},
+		"pick": {
+			"type": "string",
+			"default": "earliest",
+			"one-of": ["earliest", "middle", "latest"],
+			"name": "Which surviving tick to use",
+			"description": "earliest = most responsive, middle = most margin, latest = most delay."
+		}
+	}
+}
